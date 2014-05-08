@@ -13,6 +13,24 @@ exports.headers = headers = {
 exports.serveAssets = function(res, asset) {
   // Write some code here that helps serve up your static files!
   // (Static files are things like html (yours or archived from others...), css, or anything that doesn't change often.)
-};
+  if(asset === '/'){
+  	asset = path.join(archive.paths.siteAssets, '/index.html');
+	fs.readFile(asset, {encoding: 'utf8'}, function (err, data){
+	  res.end(data);
+	});    
+  }
+  if(asset === '/styles.css'){
+  	asset = path.join(archive.paths.siteAssets, '/styles.css');
+	fs.readFile(asset, {encoding: 'utf8'}, function (err, data){
+	  res.end(data);
+	});    
+  }     
+ 
 
+}
 // As you progress, keep thinking about what helper functions you can put here!
+
+
+
+
+ 

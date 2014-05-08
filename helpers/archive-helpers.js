@@ -9,7 +9,6 @@ var _ = require('underscore');
  * customize it in any way you wish.
  */
 
-  debugger;
 exports.paths = {
   'siteAssets' : path.join(__dirname, '../web/public'),
   'archivedSites' : path.join(__dirname, '../archives/sites'),
@@ -27,6 +26,9 @@ exports.initialize = function(pathsObj){
 // modularize your code. Keep it clean!
 
 exports.readListOfUrls = function(){
+	fs.readFile(exports.paths.list, {encoding: 'utf8'}, function (err, data){
+	  console.log(data);
+	}); 
 };
 
 exports.isUrlInList = function(){
