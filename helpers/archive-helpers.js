@@ -9,6 +9,7 @@ var _ = require('underscore');
  * customize it in any way you wish.
  */
 
+  debugger;
 exports.paths = {
   'siteAssets' : path.join(__dirname, '../web/public'),
   'archivedSites' : path.join(__dirname, '../archives/sites'),
